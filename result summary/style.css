@@ -1,0 +1,236 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --pale-blue: hsl(221, 100%, 96%);
+    --light-lavender: hsl(241, 100%, 89%);
+    --darkgray-blue: hsl(224, 30%, 27%);
+    --gray: hsl(0, 0%, 54%);
+
+    --light-red: hsl(0, 100%, 67%);
+    --orangey-yellow: hsl(39, 100%, 56%);
+    --green-teal: hsl(166, 100%, 37%);
+    --cobalt-blue: hsl(234, 85%, 45%);
+}
+
+body {
+    background-color: var(--white);
+    font-family: 'Hanken Grotesk', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+p {
+    font-size: 18px;
+}
+
+.container {
+    background-color: var(--white);
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 25px;
+    box-shadow: 24px 34px 75px 20px var(--pale-blue);
+    -webkit-box-shadow: 24px 34px 75px 20px var(--pale-blue);
+    -moz-box-shadow: 24px 34px 75px 20px var(--pale-blue);
+}
+
+
+/* -----------result part---------- */
+.result {
+    padding: 40px 50px;
+    width: 50%;
+    background: linear-gradient(180deg, hsla(252, 100%, 67%, 1) 0%, hsla(241, 81%, 54%, 1) 100%);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--light-lavender);
+}
+
+.result h2 {
+    text-transform: capitalize;
+    font-size: 1.4rem;
+}
+
+.progress {
+    margin: 32px 0;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(360deg, rgba(78, 33, 202, 0) 0%, rgba(36, 33, 202, 0.712) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress p:first-of-type {
+    color: var(--white);
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.progress p:last-of-type {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.description h3 {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin: 0 0 16px 0;
+}
+
+
+/* -----------summary part---------- */
+.summary {
+    padding: 40px;
+    width: 50%;
+    color: var(--darkgray-blue);
+}
+
+.summary h2 {
+    text-align: left;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+}
+
+.grades {
+    width: 100%;
+    margin: 32px 0;
+}
+
+.grade {
+    width: 100%;
+    margin: 20px -5px;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.grade p {
+    display: inline-block;
+}
+
+.grade img {
+    padding: 5px 0;
+}
+
+.title {
+    margin: 0 40px 0 5px;
+}
+
+/* -----------text colors and scores---------- */
+.reaction {
+    background-color: hsla(0, 92%, 85%, 0.15);
+}
+.reaction .title {
+    color: var(--light-red);
+}
+
+.memory {
+    background-color: hsla(39, 94%, 80%, 0.15);
+}
+.memory .title {
+    color: var(--orangey-yellow);
+}
+
+.verbal {
+    background-color: rgba(143, 252, 226, 0.15);
+}
+.verbal .title {
+    color: var(--green-teal);
+}
+
+.visual {
+    background-color: hsla(234, 93%, 83%, 0.15);
+}
+.visual .title {
+    color: var(--cobalt-blue);
+}
+
+.score {
+    font-weight: bold;
+}
+.score span {
+    color: var(--gray);
+}
+
+
+/* -----------button---------- */
+
+.btn {
+    position: relative;
+    width: 100%;
+    padding: 16px 0;
+    background-color: var(--darkgray-blue);
+    color: var(--white);
+    font-weight: 500;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.btn::before {
+    content: 'Continue';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, hsla(252, 100%, 67%, 1) 0%, hsla(241, 81%, 54%, 1) 100%);
+    border-radius: 30px;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.btn:hover::before {
+    opacity: 1;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 20px;
+}
+/* -----------media queries---------- */
+
+@media only screen and (max-width: 700px) {
+    .container {
+        display: block;
+    }
+
+    .result, .summary {
+        width: 100%;
+        padding: 40px 30px;
+    }
+
+    .progress p:last-of-type {
+        font-size: 1.3rem;
+    }
+
+    .description h3 {
+        margin: 10px;
+    }
+    
+    .attribution {
+        bottom: 0;
+    }
+}
