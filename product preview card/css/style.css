@@ -1,0 +1,191 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --very-dark-cyan: hsl(157, 37%, 18%);
+    --cream: hsl(30, 38%, 92%);
+    --dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    position: relative;
+    background-color: var(--cream);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 700px;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+
+/* left section */
+.photo {
+    background: url(../images/image-product-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 50%;
+    border-radius: 10px 0 0 10px;
+}
+
+
+/* right section */
+.content {
+    width: 50%;
+    padding: 30px;
+}
+
+.brand {
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--dark-grayish-blue);
+}
+
+.title {
+    font-family: 'Fraunces', serif;
+    font-size: 3rem;
+    line-height: 3rem;
+    color: var(--dark-blue);
+    margin: 25px 0;
+}
+
+.desc {
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+    font-weight: 500;
+    color: var(--dark-grayish-blue);
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+}
+
+.price h3 {
+    font-size: 2.8rem;
+    font-family: 'Fraunces', serif;
+    color: var(--dark-cyan);
+    margin-right: 25px;
+}
+
+.line-through {
+    text-decoration: line-through;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--dark-grayish-blue);
+}
+
+.add-btn {
+    background-color: var(--dark-cyan);
+    text-align: center;
+    padding: 17px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.add-btn .icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 20px;
+}
+
+.add-btn a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: var(--white);
+}
+
+.add-btn:hover {
+    background-color: var(--very-dark-cyan);
+}
+
+.attribution {
+    position: absolute;
+    bottom: 20px;
+}
+
+/* media querries */
+@media only screen and (max-width: 650px) {
+    body {
+        margin: 30px 0;
+    }
+    .container {
+        display: block;
+        height: 100vh;
+    }
+    .photo {
+        background: url("../images/image-product-mobile.jpg");
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 50%;
+        border-radius: 10px 10px 0 0;
+    }
+    .content {
+        width: 100%;
+        height: 50%;
+        padding: 25px 20px;
+    }
+    .title {
+        font-size: 2.1rem;
+        line-height: 2.1rem;
+        margin: 12px 0;
+    }
+    
+    .price {
+        margin: 33px 0;
+    }
+    .price h3 {
+        font-size: 2rem;
+        margin-right: 18px;
+    }
+    .add-btn {
+        padding: 15px;
+    }
+    .add-btn .icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 15px;
+    }
+    .add-btn a {
+        font-size: 1rem;
+    }
+    .attribution {
+        bottom: -25px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    
+    .title {
+        margin: 15px 0;
+    }
+    .desc {
+        font-size: 0.85rem;
+    }
+    .price {
+        margin: 18px 0;
+    }
+
+}
