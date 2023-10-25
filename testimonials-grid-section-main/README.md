@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: (https://github.com/pantea-najafi/practicing-projects/tree/master/testimonials-grid-section-main)
+- Live Site URL: (https://my-testimonial-grid-section-solution.netlify.app/)
 
 ### Built with
 
