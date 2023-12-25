@@ -1,0 +1,280 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Dark-Slate-Grey: hsl(234, 29%, 20%);
+  --Charcoal-Grey: hsl(235, 18%, 26%);
+  --Grey: hsl(231, 7%, 60%);
+  --White: hsl(0, 0%, 100%);
+  --primary-color: hsl(4, 100%, 67%);
+  --error-bg: hsl(5, 100%, 95%);
+  --gradient-bg: linear-gradient(
+    to right,
+    hsl(347, 100%, 66%),
+    hsl(4, 100%, 67%)
+  );
+  --font-size: 16px;
+}
+
+/* GENERAL */
+body {
+  background-color: var(--Charcoal-Grey);
+  font-family: 'Roboto', sans-serif;
+  font-size: var(--font-size);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-card {
+  background-color: var(--White);
+  width: 100%;
+  max-width: 860px;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.two-column {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.col-left {
+  width: 65%;
+  padding: 0 35px;
+}
+
+.col-right {
+  width: 50%;
+}
+
+/* COLUMN LEFT */
+h1 {
+  font-size: 40px;
+  color: var(--Dark-Slate-Grey);
+  margin: 25px 0;
+}
+
+p {
+  color: var(--Dark-Slate-Grey);
+  margin: 16px 0;
+  line-height: 25px;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  padding: 10px 35px;
+  position: relative;
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 21px;
+  height: 21px;
+  background-image: url(../assets/images/icon-list.svg);
+}
+
+.form {
+  position: relative;
+  margin: 35px 0;
+}
+
+.form label {
+  color: var(--Dark-Slate-Grey);
+  font-weight: 700;
+}
+
+.form input {
+  display: block;
+  width: 375px;
+  margin: 10px 0;
+  padding: 16px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid var(--Grey);
+  margin: 10px 0 18px 0;
+  color: var(--Dark-Slate-Grey);
+  cursor: pointer;
+}
+
+.form input:focus {
+  border: 1px solid var(--Dark-Slate-Grey);
+}
+
+.btn {
+  position: relative;
+  width: 375px;
+  padding: 16px;
+  background-color: var(--Dark-Slate-Grey);
+  color: var(--White);
+  font-weight: 700;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn::before {
+  content: 'Subscribe to monthly newsletter';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--gradient-bg);
+  border-radius: 8px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+.form input.error {
+  background-color: var(--error-bg);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.error-message {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  color: var(--primary-color);
+  font-weight: 700;
+  display: none;
+}
+
+/* COLUMN RIGHT */
+.col-right img {
+  width: 100%;
+}
+
+.mobile-bg {
+  display: none;
+}
+
+/* SUCCESS MESSAGE */
+.success-card {
+  background-color: var(--White);
+  padding: 40px 50px;
+  width: 460px;
+  border-radius: 30px;
+  display: block;
+  margin: 0 auto;
+}
+
+.success-card img {
+  width: 50px;
+}
+
+.success-card h1 {
+  font-size: 50px;
+}
+
+.success-card .email {
+  font-weight: 700;
+}
+
+.success-card .btn {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.success-card .btn::before {
+  content: 'Dismiss message';
+}
+
+.hide {
+  display: none;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 840px) {
+  .container {
+    width: 100%;
+    padding: 40px;
+  }
+
+  .two-column {
+    flex-direction: column-reverse;
+  }
+  .col-left {
+    width: 100%;
+  }
+  .col-right {
+    width: 100%;
+  }
+
+  .desktop-bg {
+    display: none;
+  }
+
+  .mobile-bg {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    padding: 0;
+  }
+
+  .signup-card {
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .col-left {
+    padding: 0 20px;
+  }
+
+  .form input {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .success-card {
+    border-radius: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 75px 20px;
+    position: relative;
+  }
+
+  .success-card .btn {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+}
